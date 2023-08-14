@@ -1,0 +1,18 @@
+.hidden {
+  display: none !important;
+}
+
+.row {
+  display: flex;
+}
+
+.header-column {
+  justify-content: center;
+  align-items: center;
+}
+
+.column-full,
+.column-half {
+  width: 100%;
+  display: flex;
+}
