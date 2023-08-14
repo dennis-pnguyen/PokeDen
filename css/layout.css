@@ -16,3 +16,9 @@
   width: 100%;
   display: flex;
 }
+
+.body-container {
+  background-color: #df4242;
+  width: auto;
+  margin: 0 auto;
+}

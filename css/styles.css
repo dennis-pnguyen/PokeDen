@@ -3,3 +3,39 @@
   height: 45px;
   margin-right: 5px;
 }
+
+.search-bar {
+  justify-content: center;
+  padding-top: 10px;
+}
+
+#pokedex-search {
+  border-radius: 1.625rem;
+  min-width: 275px;
+  height: 40px;
+  border: none;
+  font-family: "Potta One", cursive;
+  text-align: center;
+  font-size: large;
+}
+
+.fav-bat-buttons {
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.fav-btn {
+  min-width: 120px;
+  height: 25px;
+  font-size: large;
+  border-radius: 5px;
+  border: none;
+}
+
+.bat-btn {
+  min-width: 120px;
+  height: 25px;
+  font-size: large;
+  border-radius: 5px;
+  border: none;
+}
