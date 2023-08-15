@@ -2,6 +2,11 @@
   display: none !important;
 }
 
+.container {
+  max-width: 575px;
+  margin: 0 auto;
+}
+
 .row {
   display: flex;
 }
@@ -19,12 +24,17 @@
 
 .body-container {
   background-color: #df4242;
-  width: auto;
   margin: 0 auto;
+  width: auto;
 }
 
 @media screen and (min-width: 768px) {
   .container {
+    max-width: 100%;
     margin: 0 auto;
   }
+}
+
+.column-half {
+  width: 50%;
 }
