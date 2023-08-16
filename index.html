@@ -30,7 +30,9 @@
       <div class="pokedex-view" data-view="pokedex-view">
         <div class="row search-bar">
           <div class="search-bar">
-            <input type="search" id="pokedex-search" placeholder="Search Pokémon">
+            <form id="form">
+              <input type="search" id="query" class="pokedex-search" placeholder="Search Pokémon">
+            </form>
           </div>
         </div>
 
@@ -51,15 +53,12 @@
           </div>
         </div>
 
-        <div id="pokedex-entries">
-          <div class="card-wrapper">
-            <div class="pokemon-card">
-              <p class="pokemon-number">#255</p>
-              <img class="pokemon-img" src="images/torchic255.png" alt="Torchic" />
-              <h3 class="pokemon-name">Torchic</h3>
-            </div>
-          </div>
+        <div id="pokedex" class="row">
 
+          <ul id="pokedex-entries">
+
+
+          </ul>
 
         </div>
       </div>
