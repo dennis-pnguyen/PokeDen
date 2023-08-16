@@ -1,8 +1,8 @@
 const $pokemonEntryList = document.querySelector('#pokedex-entries');
 
-function getPokemonData() {
+function getPokemonImage() {
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://pokeapi.co/api/v2/pokemon?limit=100');
+  xhr.open('GET', 'https://pokeapi.co/api/v2/pokemon?limit=151');
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     for (let i = 0; i < xhr.response.results.length; i++) {
@@ -15,48 +15,25 @@ function getPokemonData() {
       } else {
         url = `https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${i + 1}.png`;
       }
-
-      const $pokeName = document.createElement('h3');
+      const $pokeWrap = document.createElement('div');
+      $pokeWrap.setAttribute('class', 'card-wrapper');
+      const $pokeCard = document.createElement('div');
+      $pokeCard.setAttribute('class', 'pokemon-card');
+      const $pokeNum = document.createElement('p');
+      $pokeNum.setAttribute('class', 'pokemon-number');
+      $pokeNum.textContent = `#${i + 1}`;
+      const $pokeName = document.createElement('h2');
       $pokeName.textContent = currentPokemon.name;
       const $img = document.createElement('img');
       $img.setAttribute('class', 'pokemon-img');
       $img.src = url;
-      $pokemonEntryList.appendChild($img);
-      $pokemonEntryList.appendChild($pokeName);
+      $pokemonEntryList.appendChild($pokeWrap);
+      $pokeWrap.appendChild($pokeCard);
+      $pokeCard.appendChild($pokeNum);
+      $pokeCard.appendChild($img);
+      $pokeCard.appendChild($pokeName);
     }
   });
   xhr.send();
 }
-
-getPokemonData();
-
-// function createEntry() {
-//  const $newLiElement = document.createElement('li');
-//  $newLiElement.setAttribute('class', 'pokemon-entry');
-//
-//  const $newCardWrap = document.createElement('div');
-//  $newCardWrap.setAttribute('class', 'card-wrapper');
-//
-//  const $newPokeCard = document.createElement('div');
-//  $newPokeCard.setAttribute('class', 'pokemon-card');
-//
-//   const $pokeNumber = document.createElement('p');
-//   $pokeNumber.textContent = pokemonData.id;
-//
-//   const $pokeImg = document.createElement('img');
-//   $pokeImg.setAttribute('src', 'pokemonData.sprites.other.offical-artwork.front-default'); // insert img src
-//   $pokeImg.setAttribute('alt', 'pokemonData.name');
-//
-//   const $pokeName = document.createElement('h3');
-//  $pokeName.textContent = cname;
-//
-//  $newLiElement.appendChild($newCardWrap);
-//
-//  $newCardWrap.appendChild($newPokeCard);
-//
-//  $newPokeCard.appendChild($pokeNumber);
-//  $newPokeCard.appendChild($pokeImg);
-//  $newPokeCard.appendChile($pokeName);
-//
-//  return $newLiElement;
-// }
+getPokemonImage();
