@@ -78,6 +78,23 @@ function getPokemonData(hash) {
     $entryCard.appendChild($entryImg);
     $entryCard.appendChild($entryName);
 
+    const $textDiv = document.createElement('div');
+    $textDiv.setAttribute('id', 'pokemon-entry');
+    const $textBox = document.createElement('div');
+    $textBox.setAttribute('class', 'pokemon-textbox');
+    const $typeHeader = document.createElement('div');
+    $typeHeader.setAttribute('class', 'pokemon-type-header');
+    const $pokeType = document.createElement('p');
+    $pokeType.setAttribute('class', 'pokemon-type');
+    $pokeType.textContent = pokeData.types[0].type.name;
+    const $pokeFlavorText = document.createElement('h3');
+    $pokeFlavorText.setAttribute('class', 'pokemon-flavor-text');
+    $pokeFlavorText.textContent = pokeData.weight;
+    $pokemonEntry.appendChild($textDiv);
+    $textDiv.appendChild($textBox);
+    $textBox.appendChild($typeHeader);
+    $typeHeader.appendChild($pokeType);
+    $typeHeader.appendChild($pokeFlavorText);
   });
   xhrData.send();
 }
