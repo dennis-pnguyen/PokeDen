@@ -1,9 +1,6 @@
 const $pokedexList = document.querySelector('#pokedex-entries');
 const $pokemonEntry = document.querySelector('.pokemon-entry');
-const $textDiv = document.createElement('div');
-$textDiv.setAttribute('id', 'pokemon-entry');
-const $textBox = document.createElement('div');
-$textBox.setAttribute('class', 'pokemon-textbox');
+const $typeText = document.querySelector('.type-text');
 
 function getPokemonImage() {
   const xhr = new XMLHttpRequest();
@@ -82,13 +79,17 @@ function getPokemonData(hash) {
     $entryCard.appendChild($entryImg);
     $entryCard.appendChild($entryName);
 
+    const $textDiv = document.createElement('div');
+    $textDiv.setAttribute('class', 'type-box');
+    const $textBox = document.createElement('div');
+    $textBox.setAttribute('class', 'pokemon-typebox');
     const $typeHeader = document.createElement('div');
     $typeHeader.setAttribute('class', 'pokemon-type-header');
     const $pokeType = document.createElement('p');
     $pokeType.setAttribute('class', 'pokemon-type');
     $pokeType.textContent = pokeData.types[0].type.name;
 
-    $pokemonEntry.appendChild($textDiv);
+    $typeText.appendChild($textDiv);
     $textDiv.appendChild($textBox);
     $textBox.appendChild($typeHeader);
     $typeHeader.appendChild($pokeType);
@@ -99,10 +100,18 @@ function getPokemonData(hash) {
   xhrSpecies.responseType = 'json';
   xhrSpecies.addEventListener('load', function () {
     const pokeSpecies = xhrSpecies.response;
+    const $pokeText = document.createElement('div');
+    $pokeText.setAttribute('class', 'poke-text');
+    const $pokeTextBox = document.createElement('div');
+    $pokeTextBox.setAttribute('class', 'poke-text-box');
     const $pokeFlavorText = document.createElement('h3');
     $pokeFlavorText.setAttribute('class', 'pokemon-flavor-text');
     $pokeFlavorText.innerText = pokeSpecies.flavor_text_entries[1].flavor_text;
-    $textBox.appendChild($pokeFlavorText);
+
+    $typeText.appendChild($pokeText);
+    $pokeText.appendChild($pokeTextBox);
+    $pokeTextBox.appendChild($pokeFlavorText);
+
   });
   xhrSpecies.send();
 }
