@@ -87,6 +87,8 @@ ul {
 .pokemon-entry {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 35px;
 }
 
 .pokemon-img {
@@ -122,6 +124,7 @@ ul {
   background-color: white;
   border-radius: 12px;
   justify-content: space-evenly;
+  flex-direction: column;
 }
 
 .pokemon-type-header {
