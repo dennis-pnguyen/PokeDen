@@ -33,15 +33,7 @@ input.pokedex-search {
   padding-bottom: 15px;
 }
 
-.fav-btn {
-  min-width: 120px;
-  height: 30px;
-  font-size: 1.5rem;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-}
-
+.fav-btn,
 .bat-btn {
   min-width: 120px;
   height: 30px;
