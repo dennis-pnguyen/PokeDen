@@ -109,9 +109,19 @@ ul {
   align-items: center;
 }
 
-.pokemon-textbox {
+.poke-text {
   display: flex;
-  height: 300px;
+}
+
+.type-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.pokemon-typebox {
+  display: flex;
+  height: 70px;
   width: 350px;
   background-color: white;
   border-radius: 12px;
@@ -133,4 +143,11 @@ ul {
 
 .pokemon-type {
   text-transform: capitalize;
+}
+
+.poke-text-box {
+  width: 350px;
+  height: 200px;
+  background-color: white;
+  border-radius: 12px;
 }
