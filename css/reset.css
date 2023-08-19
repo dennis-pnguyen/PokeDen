@@ -5,3 +5,11 @@
 body {
   margin: 0;
 }
+
+.pokemon-type {
+  max-width: 350px;
+}
+
+#pokemon-entry {
+  height: 300px;
+}
